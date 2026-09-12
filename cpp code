@@ -1,0 +1,47 @@
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string assignments[100];
+    int n = 0;
+    int choice;
+
+    do {
+        cout << "\n--- Student Assignment Tracker ---\n";
+        cout << "1. Add Assignment\n";
+        cout << "2. View Assignments\n";
+        cout << "3. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+        cin.ignore();
+
+        if (choice == 1) {
+            cout << "Enter assignment name: ";
+            getline(cin, assignments[n]);
+            n++;
+            cout << "Assignment added successfully!\n";
+        }
+        else if (choice == 2) {
+            if (n == 0) {
+                cout << "No assignments found.\n";
+            } else {
+                cout << "\nYour Assignments:\n";
+                for (int i = 0; i < n; i++) {
+                    cout << i + 1 << ". " << assignments[i] << endl;
+                }
+            }
+        }
+        else if (choice == 3) {
+            cout << "Thank you!\n";
+        }
+        else {
+            cout << "Invalid choice.\n";
+        }
+
+    } while (choice != 3);
+
+    return 0;
+}
+```
